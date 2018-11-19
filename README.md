@@ -5,8 +5,8 @@ SqlalchemyModelConvert
 - 支持关联模型转换，不需要显示的字段，字段值的修改
 
 
-### Manually【手动导入】
-下载sqlalchemy_model_convert.py文件
+### Installation【安装】
+pip install sqlalchemy-model-convert
 
 
 # Examples【示例】
