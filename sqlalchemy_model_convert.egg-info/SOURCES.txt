@@ -1,8 +1,0 @@
-setup.cfg
-setup.py
-sqlalchemy_model_convert/__init__.py
-sqlalchemy_model_convert/sqlalchemy_model_convert.py
-sqlalchemy_model_convert.egg-info/PKG-INFO
-sqlalchemy_model_convert.egg-info/SOURCES.txt
-sqlalchemy_model_convert.egg-info/dependency_links.txt
-sqlalchemy_model_convert.egg-info/top_level.txt

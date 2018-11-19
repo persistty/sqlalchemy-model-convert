@@ -1,9 +1,0 @@
-*.pyc
-*.pyo
-*.sqlite3
-.idea/
-.idea
-.DS_Store
-sqlalchemy_model_convert.egg-info/
-dist/
-build/
