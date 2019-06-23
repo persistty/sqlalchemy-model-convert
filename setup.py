@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="sqlalchemy-model-convert",
-    version="1.0",
+    version="1.1",
     author="tystudy",
     author_email="",
     description="Use simple and convenient model transform dictionary module(Python3)",
