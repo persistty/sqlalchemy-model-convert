@@ -1,8 +1,8 @@
 SqlalchemyModelConvert
 ===
-- 使用简单方便的模型转字典模块(Python3)
-- 模型对象转换成字典，列表模型对象转换成列表
-- 支持关联模型转换，不需要显示的字段，字段值的修改
+- Use simple and convenient model to dictionary module(Python3)
+- Model objects are converted to dictionaries, and list model objects are converted to list dictionaries
+- Support for association model conversion, no need to display fields, field value modification
 
 
 ### Installation【安装】
@@ -10,11 +10,11 @@ pip install sqlalchemy-model-convert
 
 
 # Examples【示例】
-### 定义的模型类，继承ModelConvert
+### Defined model class，Inherited ModelConvert
 
 ```python
 class Role(db.Model, ModelConvert):
-    """角色"""
+    """Role"""
     __tablename__ = 'tbl_roles'
 
     id = db.Column(db.Integer, primary_key=True)
@@ -24,7 +24,7 @@ class Role(db.Model, ModelConvert):
 
 
 class User(db.Model, ModelConvert):
-    """用户"""
+    """User"""
     __tablename__ = 'tbl_users'
 
     id = db.Column(db.Integer, primary_key=True)
@@ -32,7 +32,7 @@ class User(db.Model, ModelConvert):
     password = db.Column(db.String(64))
     role_id = db.Column(db.Integer, db.ForeignKey('tbl_roles.id'))
 ```
-### 模型对象转换字典
+### Model object transform dictionary
 ```python
 user = User.query.first()
 print(user.key_values())
@@ -47,7 +47,7 @@ print(user.key_values())
 }
 ```
 
-关联模型的转换，不需要显示的字段
+Associated model transformation with fields that do not need to be displayed
 
 ```python
 user = User.query.first()
@@ -65,7 +65,7 @@ print(user.key_values(related_models=['role'], ignore_fields=['role_id']))
   }
 }
 ```
-关联模型的转换(关联的列表模型对象)
+Association model conversion(Associated list model objects)
 
 ```python
 role = Role.query.first()
@@ -86,11 +86,11 @@ print(role.key_values(related_models=['users']))
   ]
 }
 ```
-字段值的修改，在模型类中重写set_field _value方法
+Field value modification，Override the set_field _value method in the model class
 
 ```python
 class User(db.Model, ModelConvert):
-    """用户"""
+    """User"""
     __tablename__ = 'tbl_users'
 
     id = db.Column(db.Integer, primary_key=True)
@@ -116,7 +116,7 @@ print(user.key_values())
 }
 ```
 
-### 列表模型对象转换列表
+### List model object transform list
 ```python
 users = User.query.all()
 print(User.key_values_list(users))
@@ -144,7 +144,7 @@ print(User.key_values_list(users))
   }
 ]
 ```
-列表里面模型对象关联的模型对象，列表里面模型对象不需要显示的字段
+Model objects associated with model objects in the list，Fields in the list that model objects do not need to display
 
 ```python
 users = User.query.all()

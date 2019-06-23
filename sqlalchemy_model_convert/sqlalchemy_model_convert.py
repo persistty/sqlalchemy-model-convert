@@ -1,22 +1,22 @@
 class ModelConvert(object):
-    """模型转换类，把对象转换成对应的字典"""
+    """Model transform class，Convert the object to the corresponding dictionary"""
     @classmethod
     def key_values_list(cls, models, related_models=[], ignore_fields=[]):
         """
-        把对象列表转换成字典列表
-        :param models: 要转换的对象列表
-        :param related_models: 列表里面模型对象要显示关联查询的对象
-        :param ignore_fields: 列表里面模型对象不需要显示的字段
-        :return: 返回列表
+        Convert the list of objects into a dictionary list
+        :param models: List of objects to convert
+        :param related_models: The model object in the list to display the object of the associated query
+        :param ignore_fields: Fields in the list that the model object does not need to display
+        :return: Return list
         """
         return cls.__convert_list(models, related_models, ignore_fields)
 
     def key_values(self, related_models=[], ignore_fields=[]):
         """
-        把对象转换成字典
-        :param related_models: 要显示关联查询的对象
-        :param ignore_fields: 不需要显示的字段
-        :return: 返回字典
+        Convert an object into a dictionary
+        :param related_models: The object to display the associated query
+        :param ignore_fields: Fields that do not need to be displayed
+        :return: Return dictionary
         """
         if not hasattr(self, '__table__'):
             return self.__dict__
@@ -34,7 +34,7 @@ class ModelConvert(object):
         return attrs_dict
 
     def __convert_field(self, fields, ignore_fields=[]):
-        """转换数据库对应的字段"""
+        """Transform the corresponding fields of the database"""
         field_dict = dict()
         for column in fields:
             field = column.name
@@ -47,7 +47,7 @@ class ModelConvert(object):
 
     @classmethod
     def __convert_list(cls, models, related_models=[], ignore_fields=[]):
-        """转换一个列表"""
+        """Convert a list"""
         list_dicts = list()
         for model in models:
             if isinstance(model, ModelConvert):
@@ -59,9 +59,10 @@ class ModelConvert(object):
 
     def set_field_value(self, field, value):
         """
-        设置对应字段的值，重写该方法，对特殊字段值的修改，例如日期字段值的修改
-        :param field: 字段名
-        :param value: 值
-        :return: 返回修改的值
+        Set the value of the corresponding field, override the method, 
+        and modify the value of a particular field, such as the value of the date field
+        :param field: Field name
+        :param value: value
+        :return: Return the modified value
         """
         return value
