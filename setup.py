@@ -8,7 +8,7 @@ setuptools.setup(
     version="1.0",
     author="tystudy",
     author_email="",
-    description="使用简单方便的模型转字典模块(Python3)",
+    description="Use simple and convenient model transform dictionary module(Python3)",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/persistty/sqlalchemy-model-convert",

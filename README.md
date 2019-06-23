@@ -1,6 +1,6 @@
 SqlalchemyModelConvert
 ===
-- Use simple and convenient model to dictionary module(Python3)
+- Use simple and convenient model transform dictionary module(Python3)
 - Model objects are converted to dictionaries, and list model objects are converted to list dictionaries
 - Support for association model conversion, no need to display fields, field value modification
 
